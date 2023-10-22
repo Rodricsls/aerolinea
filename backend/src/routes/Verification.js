@@ -59,4 +59,23 @@ module.exports = (app) => {
             res.json({ status: 0, mensaje: "Error en el servidor" + error.message });
         }
     });
+
+    //Verificamos si ya existe la ruta
+    app.post('/Vef-viaje', async (req, res) => {
+        try{
+            const values=[
+                req.body.origen,
+                req.body.destino
+            ];
+            
+            const result=await queryAsync(verificate.rutas, values);
+            if(result.rows[0].count==0){
+                res.json({ status: 1, mensaje: "La ruta no existe!!!" , exist:false});
+            }else{
+                res.json({ status: 1, mensaje: "La ruta ya existe!!!" , exist:true});
+            }
+        }catch(error){
+            res.json({ status: 0, mensaje: "Error en el servidor" + error.message });
+        }
+    });
 }

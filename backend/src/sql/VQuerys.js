@@ -9,9 +9,13 @@ const aeropuerto='SELECT COUNT(*) as count FROM Aeropuerto WHERE IATA = $1';
 /* Verificamos si ya hay un viaje con esa fecha y numero de vuelo */
 const viajes='SELECT COUNT(*) as count FROM Viajes WHERE Fecha = $1 AND num_vuelo=$2';
 
+/*Verficamos si ya existe una ruta existente*/
+const rutas='SELECT COUNT(*) as count FROM Rutas WHERE origen = $1 AND destino = $2';
+
 module.exports={
     aeronave,
     aeropuerto,
-    viajes
+    viajes,
+    rutas
 }
 
