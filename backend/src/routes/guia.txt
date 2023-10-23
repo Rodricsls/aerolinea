@@ -1,0 +1,11 @@
+let vef=filas.findIndex(i+1);
+            let dif=letras.filter(element =>!pos[i].includes(element));
+            if(vef!=-1){
+                for (a=0; a<dif.length; a++){
+                    asientos[a]={"fila":i, "posicion":dif[a]}
+                }
+            }else{
+                for (a=0; a<dif.length; a++){
+                    
+                }
+            }
