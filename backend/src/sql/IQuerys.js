@@ -1,13 +1,13 @@
 /* Aqui se declaran todos los querys que hacen INSERT a una tabla de la base de datos */
 
 /*Insertar empleados*/
-const empleados="INSERT INTO Empleados (Nombre, Nacionalidad, Tiempo_Empresa, Puesto, Horas_Vuelo, Contacto, Idioma, puntuacion) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)";
+const empleados="INSERT INTO Empleados (Nombre, Nacionalidad, Tiempo_Empresa, Puesto, Horas_Vuelo, Contacto, Idioma, puntuación) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)";
 
 /* Insertar aeronaves */
 const aeronave="INSERT INTO Aeronave (Matricula, Marca, Modelo, Cap_peso, Cap_pasajeros, Antiguedad) VALUES ($1,$2,$3,$4,$5,$6)";
 
 /* Insertar AeroPuerto */
-const aeropuerto="INSERT INTO Aeropuerto (IATA, Nombre, Pais, Ciudad, ranking) VALUES ($1,$2,$3,$4,$5)";
+const aeropuerto="INSERT INTO Aeropuerto (IATA, Nombre, País, Ciudad, ranking) VALUES ($1,$2,$3,$4,$5)";
 
 /* Insertar Rutas */
 const rutas="INSERT INTO Rutas (origen, destino, hora_salida, distancia, tiempo_vuelo) VALUES ($1,$2,$3,$4,$5)";

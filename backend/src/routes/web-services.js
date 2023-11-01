@@ -20,7 +20,7 @@ module.exports = (app) =>{
 
         if(formato==="JSON"){
             const result={"lista_vuelos":
-                            {"aerolinea":"QAT",
+                            {"aerolinea":"QTR",
                             "fecha":fecha,
                             "origen":origen,
                             "destino":destino,
@@ -30,7 +30,7 @@ module.exports = (app) =>{
             res.json(result);
         }else{
             const resultxml={"lista_vuelos":
-                            {"aerolinea":"QAT",
+                            {"aerolinea":"QTR",
                             "fecha":fecha,
                             "origen":origen,
                             "destino":destino,
@@ -140,7 +140,7 @@ module.exports = (app) =>{
         if(formato==="JSON"){
             const result={"boleto":
                             {
-                                "aerolinea":"QAT",
+                                "aerolinea":"QTR",
                                 "vuelo":vuelo,
                                 "fecha":fecha,
                                 "hora":hora,
@@ -151,7 +151,7 @@ module.exports = (app) =>{
         }else{
             const resultxml={"boleto":
                             {
-                                "aerolinea":"QAT",
+                                "aerolinea":"QTR",
                                 "vuelo":vuelo,
                                 "fecha":fecha,
                                 "hora":hora,

@@ -3,6 +3,7 @@ const app= require("./server");
 require("./routes/Insert")(app);
 require("./routes/Update")(app);
 require("./routes/Select")(app);
+require("./routes/Delete")(app);
 require("./routes/Verification")(app);
 require("./routes/get")(app);
 require("./routes/web-services")(app);
