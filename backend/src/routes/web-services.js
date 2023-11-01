@@ -17,6 +17,10 @@ module.exports = (app) =>{
         for(i=0; i<vuelos.length; i++){
             flys.push({"numero":vuelos[i].num_vuelo, "hora":vuelos[i].hora_salida, "precio":vuelos[i].precio});
         }
+        const año = fecha.getFullYear();
+        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); 
+        const dia = fecha.getDate().toString().padStart(2, '0');
+        fecha = `${año}${mes}${dia}`;
 
         if(formato==="JSON"){
             const result={"lista_vuelos":
@@ -90,6 +94,11 @@ module.exports = (app) =>{
             }
         }
 
+        const año = fecha.getFullYear();
+        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); 
+        const dia = fecha.getDate().toString().padStart(2, '0');
+        fecha = `${año}${mes}${dia}`;
+
         if(formato=="JSON"){
             const result={"lista_asientos":
                             {  "aerolinea":aerolinea,
@@ -136,6 +145,12 @@ module.exports = (app) =>{
         console.log("acas")
         const num_boleto=(await queryAsync(service.get_boleto,[nombre, vuelo, fecha, fila, pos])).rows[0].num_boleto;
         console.log(num_boleto);
+        const partesHora = hora.split(':');
+        const hora_f = `${partesHora[0]}${partesHora[1]}`;
+        const año = fecha.getFullYear();
+        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); 
+        const dia = fecha.getDate().toString().padStart(2, '0');
+        fecha = `${año}${mes}${dia}`;
         
         if(formato==="JSON"){
             const result={"boleto":
@@ -143,7 +158,7 @@ module.exports = (app) =>{
                                 "aerolinea":"QAT",
                                 "vuelo":vuelo,
                                 "fecha":fecha,
-                                "hora":hora,
+                                "hora":hora_f,
                                 "numero":num_boleto
                             }
                         }
@@ -154,7 +169,7 @@ module.exports = (app) =>{
                                 "aerolinea":"QAT",
                                 "vuelo":vuelo,
                                 "fecha":fecha,
-                                "hora":hora,
+                                "hora":hora_f,
                                 "numero":num_boleto
                             }
                         }
