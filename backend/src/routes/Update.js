@@ -47,7 +47,6 @@ module.exports = (app) => {
             req.body.IATA,
             req.body.Nombre,
             req.body.ranking,
-            req.body.horas_vuelo,
             req.body.IATA1
             ];
             await queryAsync(update.aeropuerto,values);

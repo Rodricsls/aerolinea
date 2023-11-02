@@ -17,9 +17,10 @@ module.exports = (app) =>{
         for(i=0; i<vuelos.length; i++){
             flys.push({"numero":vuelos[i].num_vuelo, "hora":vuelos[i].hora_salida, "precio":vuelos[i].precio});
         }
+        fecha = new Date(fecha);
         const año = fecha.getFullYear();
         const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); 
-        const dia = fecha.getDate().toString().padStart(2, '0');
+        const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
         fecha = `${año}${mes}${dia}`;
 
         if(formato==="JSON"){
@@ -93,10 +94,10 @@ module.exports = (app) =>{
                 indice++;
             }
         }
-
+        fecha = new Date(fecha);
         const año = fecha.getFullYear();
         const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); 
-        const dia = fecha.getDate().toString().padStart(2, '0');
+        const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
         fecha = `${año}${mes}${dia}`;
 
         if(formato=="JSON"){
@@ -147,9 +148,10 @@ module.exports = (app) =>{
         console.log(num_boleto);
         const partesHora = hora.split(':');
         const hora_f = `${partesHora[0]}${partesHora[1]}`;
+        fecha = new Date(fecha);
         const año = fecha.getFullYear();
         const mes = (fecha.getMonth() + 1).toString().padStart(2, '0'); 
-        const dia = fecha.getDate().toString().padStart(2, '0');
+        const dia = (fecha.getDate() + 1).toString().padStart(2, '0');
         fecha = `${año}${mes}${dia}`;
         
         if(formato==="JSON"){
